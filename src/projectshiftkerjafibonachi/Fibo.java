@@ -80,9 +80,7 @@ public class Fibo {
             System.out.println(pekerja[l] +" bekerja selama "+ onjlist.get(k) + 
                     " hari" +"   dari hari ke " +y+ " samapai hari ke "+x );
             y=x+1;
-            }
-            else
-            {
+            }else{
                 System.out.println(pekerja[l] +" bekerja selama "+ onjlist.get(k) + 
                     " hari" +"   dari hari ke " +y);
                 y=x+1;

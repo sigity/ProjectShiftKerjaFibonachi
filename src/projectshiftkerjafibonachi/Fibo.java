@@ -8,6 +8,7 @@ package projectshiftkerjafibonachi;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -75,20 +76,35 @@ public class Fibo {
              }
          }
      }
-
      
-     public static void main(String[] args) {
+     static boolean validasiHari (int jmInteger) throws CustomException{
+         if (jmInteger < 100){
+             JOptionPane.showMessageDialog(null, "Bekerja minimal 100 Hari!!", "ERROR", JOptionPane.ERROR_MESSAGE);
+             throw new CustomException("Jumlah hari bekerja harus minimal 100 hari!");
+         }
+         return true;
+     }
      
-         System.out.println("masukan jumlah hari");
+     static boolean validasiPekerja (int jmlpekerja) throws CustomException{
+         if (jmlpekerja < 2){
+             JOptionPane.showMessageDialog(null, "Jumlah minimal pekerja adalah 2 orang!!", "ERROR", JOptionPane.ERROR_MESSAGE);
+             throw new CustomException("Jumlah Pekerja minimal 2 orang!");
+         }
+         return true;
+     }
+     
+     public static void main(String[] args) throws CustomException {
          Scanner SC = new Scanner(System.in); //bikin scanner 1 saja
+         System.out.println("masukan jumlah hari");
          Integer jmInteger = SC.nextInt();
          List<Integer> hr=  Hitung(jmInteger);
+         validasiHari(jmInteger);
 //         System.out.println(hr.size());
          System.out.println("masukan jumlah pekerja");
          Integer jmlpekerja = SC.nextInt();
+         validasiPekerja(jmlpekerja);
+         System.out.println("========================================================================");
          List<String> nm = pegawai(jmlpekerja);
          print(nm, hr, jmlpekerja);
-
-         
     }
 }

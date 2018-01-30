@@ -6,6 +6,8 @@
 package projectshiftkerjafibonachi;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -134,9 +136,19 @@ public class ProjectFrame extends javax.swing.JFrame {
         
         Pekerja p1=new Pekerja();
         Hari h2=new Pekerja();
-        List hp = p1.HitungPekerja(vpekerja);
-        List hr = h2.HitungHari(vhari);
-        
+        List hp = null;
+        try {
+            hp = p1.HitungPekerja(vpekerja);
+        } catch (CustomException ex) {
+            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        List hr = null;
+        try {
+            hr = h2.HitungHari(vhari);
+        } catch (CustomException ex) {
+            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
         Otext.setText(p1.print(hp, hr, vpekerja));
 
     }//GEN-LAST:event_BschduleActionPerformed

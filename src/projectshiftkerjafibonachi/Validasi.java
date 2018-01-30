@@ -22,7 +22,7 @@ public class Validasi {
      }
      
      static boolean validasiPekerja (int jmlpekerja) throws CustomException{
-         if (jmlpekerja < 2){
+         if (jmlpekerja < 2 || jmlpekerja>10 ){
              JOptionPane.showMessageDialog(null, "Jumlah minimal pekerja adalah 2 orang!!", "ERROR", JOptionPane.ERROR_MESSAGE);
              throw new CustomException("Jumlah Pekerja minimal 2 orang!");
          }

@@ -52,19 +52,19 @@ public class ProjectShiftKerjaFibonachi {
 //            
 //            
 //        }
-        Scanner SC = new Scanner(System.in); //bikin scanner 1 saja
-        System.out.println("masukan jumlah pekerja");
-        Integer jmlpekerja = SC.nextInt();
-        
-        Pekerja pekerja= new Pekerja();
-        List pk = pekerja.HitungPekerja(jmlpekerja);
-        System.out.println("masukan jumlah hari");
-        Integer jmlhari = SC.nextInt();
-        Hari h=new Pekerja();
-//        h.HitungHari(jmlhari);
-        List hr = h.HitungHari(jmlhari);
-        
-        pekerja.print(pk, hr, jmlpekerja);
+//        Scanner SC = new Scanner(System.in); //bikin scanner 1 saja
+//        System.out.println("masukan jumlah pekerja");
+//        Integer jmlpekerja = SC.nextInt();
+//        
+//        Pekerja pekerja= new Pekerja();
+//        List pk = pekerja.HitungPekerja(jmlpekerja);
+//        System.out.println("masukan jumlah hari");
+//        Integer jmlhari = SC.nextInt();
+//        Hari h=new Pekerja();
+////        h.HitungHari(jmlhari);
+//        List hr = h.HitungHari(jmlhari);
+//        
+//        pekerja.print(pk, hr, jmlpekerja);
     }
     
 }

@@ -14,14 +14,9 @@ import javax.swing.JOptionPane;
 public class Validasi {
     
     static boolean validasiHari (int jmInteger) throws CustomException{
-         if (jmInteger < 100){
+       if (jmInteger < 100){
              JOptionPane.showMessageDialog(null, "Bekerja minimal 100 Hari!!", "ERROR", JOptionPane.ERROR_MESSAGE);
-<<<<<<< HEAD
              throw new CustomException("Jumlah hari bekerja harus minimal 100 hari!");
-             
-=======
-             throw new CustomException("Jumlah hari bekerja minimal 100 hari!");
->>>>>>> fbb3a1524f5b13a5382ae2ef7b404677d89e04b4
          }
          return true;
      }

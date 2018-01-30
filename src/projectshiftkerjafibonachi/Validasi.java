@@ -17,14 +17,19 @@ public class Validasi {
          if (jmInteger < 100){
              JOptionPane.showMessageDialog(null, "Bekerja minimal 100 Hari!!", "ERROR", JOptionPane.ERROR_MESSAGE);
              throw new CustomException("Jumlah hari bekerja harus minimal 100 hari!");
+             
          }
          return true;
      }
      
      static boolean validasiPekerja (int jmlpekerja) throws CustomException{
-         if (jmlpekerja < 2 || jmlpekerja>10 ){
+         if (jmlpekerja < 2 ){
              JOptionPane.showMessageDialog(null, "Jumlah minimal pekerja adalah 2 orang!!", "ERROR", JOptionPane.ERROR_MESSAGE);
              throw new CustomException("Jumlah Pekerja minimal 2 orang!");
+         }
+         else if (jmlpekerja > 10) {
+             JOptionPane.showMessageDialog(null, "Jumlah maximal pekerja adalah 10 orang!!", "ERROR", JOptionPane.ERROR_MESSAGE);
+             throw new CustomException("Jumlah Pekerja maximal 10 orang!");
          }
          return true;
      }

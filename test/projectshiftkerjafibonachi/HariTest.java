@@ -65,5 +65,15 @@ public class HariTest {
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
+    @org.junit.Test
+    public void testHitungHariF() throws CustomException {
+        System.out.println("HitungHari");
+        Hari instance = new Hari();
+//        int hari =200;
+//        assertArrayEquals(2 ,instance.HitungHari(200).get(3));
+        assertNotEquals(3, instance.HitungHari(200).get(3));
+        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
     
 }

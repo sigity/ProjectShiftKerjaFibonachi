@@ -17,12 +17,11 @@ public class Pekerja extends Hari{
     String NM [] ={"AMANDA","BRAM","CHARLES","DONNY","DISTA","ARISTON","TAUFIK","YUSRI","ADITYA","BAGAS"};
     
     public List HitungPekerja(int jmlpekerja) throws CustomException{
-        Validasi.validasiPekerja(jmlpekerja);
         List NamaPekerja = new ArrayList();
-        while (i < jmlpekerja) {            
-            NamaPekerja.add(NM[i]); 
-            i++;
-        }
+            while (i < jmlpekerja) {            
+                NamaPekerja.add(NM[i]); 
+                i++;
+            }
         return NamaPekerja;
     }
     

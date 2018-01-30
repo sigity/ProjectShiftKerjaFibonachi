@@ -36,7 +36,7 @@ public class Fibo {
              onjlist.add(methodFibonacci(i));
              if (sum > hari) { //500 adalah angka sesuai dari inputan
                  selisih = sum - hari;
-                 System.out.println("selesihnya "+ selisih);
+//                 System.out.println("selesihnya "+ selisih);
                  onjlist.set(i,methodFibonacci(i)-selisih);
 //                 onjlist.remove(i);
                 }
@@ -65,11 +65,12 @@ public class Fibo {
          Scanner SC = new Scanner(System.in); //bikin scanner 1 saja
          Integer jmInteger = SC.nextInt();
          List<Integer> rs=  Hitung(jmInteger);
-         System.out.println(rs.size());
+//         System.out.println(rs.size());
          
          System.out.println("masukan jumlah pekerja");
 //         Scanner jml = new Scanner(System.in);
          Integer jmlpekerja = SC.nextInt();
+         System.out.println("============================================================");
 //         String [] pekerja = new String[jmlpekerja];
 //         for (int g = 0; g < pekerja.length; g++) {
 //             System.out.println("pekerja ke " +g);

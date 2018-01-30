@@ -34,6 +34,7 @@ public class Hari {
             }
             i++;
         }
+        System.out.println(listhari.size());
         return listhari;
     }
 }

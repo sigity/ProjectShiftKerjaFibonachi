@@ -13,51 +13,27 @@ import java.util.Scanner;
  *
  * @author Sigit Yudhianto
  */
-public class ProjectShiftKerjaFibonachi {
-    
+public class ProjectShiftKerjaFibonachi { 
 
-    /**
-     * @param args the command line arguments
-     * 
-     */
-     public static int methodFibonacci(int n)
-    {   
-        if(n <=0 || n<=1){
-           return n; 
-        }else{
-            return methodFibonacci(n-2) + methodFibonacci(n-1) ;
-        }
-            
-    }
-     
-     public static void  Hitung(){
-         int sum = 0;
-         int i =0;
-         int selisih = 0;
-         List onjlist = new ArrayList();
-//         for (int i = 0; i < 30; i++) {
-//             onjlist.add(methodFibonacci(i));
-////             onjlist.add(i);
-//             sum = sum + methodFibonacci(i);
+//    void print(List<String> nm, List<Integer> hr , int jmlpekerja){
+//         int x = 0, y = 0;
+//         for (int k = 0 , l = 0 ; k < hr.size(); k++, l++) {
+//             if (k % jmlpekerja == 0) {
+//                 l = 0;
+//             }
+//             x = x + hr.get(k);
+//             if (hr.get(k) > 1) {
+//                 System.out.println(nm.get(l) +" bekerja selama "+ hr.get(k) + 
+//                    " hari" +"   dari hari ke " +y+ " samapai hari ke "+x );
+//                 y=x+1;
+//             }else{
+//                 System.out.println(nm.get(l) +" bekerja selama "+ hr.get(k) + 
+//                    " hari" +"   dari hari ke " +y);
+//                y=x+1;
+//             }
 //         }
-//         System.out.println(sum);
-//         System.out.println(onjlist);
-         while (sum < 1000){
-//             onjlist.add(methodFibonacci(i));
-             sum = sum + methodFibonacci(i);
-             onjlist.add(methodFibonacci(i));
-//             System.out.println(sum);
-             if (sum > 1000) { //500 adalah angka sesuai dari inputan
-                 selisih = sum - 1000;
-                 System.out.println("selesihnya "+ selisih);
-//                 onjlist.add(methodFibonacci(i)-selisih);
-                   onjlist.set(i, methodFibonacci(i)-selisih);
-                }
-             i++;
-         }
-         System.out.println(sum);
-         System.out.println(onjlist);
-     }
+//     }
+    
     
     public static void main(String[] args) {
         // TODO code application logic here
@@ -76,10 +52,19 @@ public class ProjectShiftKerjaFibonachi {
 //            
 //            
 //        }
-        Hitung();
-
+        Scanner SC = new Scanner(System.in); //bikin scanner 1 saja
+        System.out.println("masukan jumlah pekerja");
+        Integer jmlpekerja = SC.nextInt();
         
+        Pekerja pekerja= new Pekerja();
+        List pk = pekerja.HitungPekerja(jmlpekerja);
+        System.out.println("masukan jumlah hari");
+        Integer jmlhari = SC.nextInt();
+        Hari h=new Pekerja();
+//        h.HitungHari(jmlhari);
+        List hr = h.HitungHari(jmlhari);
         
+        pekerja.print(pk, hr, jmlpekerja);
     }
     
 }

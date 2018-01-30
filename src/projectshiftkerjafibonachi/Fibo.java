@@ -83,7 +83,7 @@ public class Fibo {
          Scanner SC = new Scanner(System.in); //bikin scanner 1 saja
          Integer jmInteger = SC.nextInt();
          List<Integer> hr=  Hitung(jmInteger);
-         System.out.println(hr.size());
+//         System.out.println(hr.size());
          System.out.println("masukan jumlah pekerja");
          Integer jmlpekerja = SC.nextInt();
          List<String> nm = pegawai(jmlpekerja);

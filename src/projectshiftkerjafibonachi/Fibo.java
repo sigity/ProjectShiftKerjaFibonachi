@@ -36,7 +36,7 @@ public class Fibo {
              onjlist.add(methodFibonacci(i));
              if (sum > hari) { //500 adalah angka sesuai dari inputan
                  selisih = sum - hari;
-                 System.out.println("selesihnya "+ selisih);
+//                 System.out.println("selesihnya "+ selisih);
                  onjlist.set(i,methodFibonacci(i)-selisih);
 //                 onjlist.remove(i);
                 }
@@ -47,15 +47,33 @@ public class Fibo {
      }
      
      public static List pegawai(int jmlpegawai){
-         
          List<String> pg = new ArrayList();
-         String [] namapegawai={"donny","april","nathan","donnay","kris","simatupang","sijambut","kalangkabut"};
+         String [] namapegawai={"donny","april","nathan","donnay","kris","simatupang","situmorang","kalangkabut","andre","gadis"};
          int i = 0;
          while (i< jmlpegawai) {             
              pg.add(namapegawai[i]);
              i++;
          }
          return pg;
+     }
+     
+     static  void print(List<String> nm, List<Integer> hr , int jmlpekerja){
+         int x = 0, y = 0;
+         for (int k = 0 , l = 0 ; k < hr.size(); k++, l++) {
+             if (k % jmlpekerja == 0) {
+                 l = 0;
+             }
+             x = x + hr.get(k);
+             if (hr.get(k) > 1) {
+                 System.out.println(nm.get(l) +" bekerja selama "+ hr.get(k) + 
+                    " hari" +"   dari hari ke " +y+ " samapai hari ke "+x );
+                 y=x+1;
+             }else{
+                 System.out.println(nm.get(l) +" bekerja selama "+ hr.get(k) + 
+                    " hari" +"   dari hari ke " +y);
+                y=x+1;
+             }
+         }
      }
 
      
@@ -64,38 +82,13 @@ public class Fibo {
          System.out.println("masukan jumlah hari");
          Scanner SC = new Scanner(System.in); //bikin scanner 1 saja
          Integer jmInteger = SC.nextInt();
-         List<Integer> rs=  Hitung(jmInteger);
-         System.out.println(rs.size());
-         
+         List<Integer> hr=  Hitung(jmInteger);
+         System.out.println(hr.size());
          System.out.println("masukan jumlah pekerja");
-//         Scanner jml = new Scanner(System.in);
          Integer jmlpekerja = SC.nextInt();
-//         String [] pekerja = new String[jmlpekerja];
-//         for (int g = 0; g < pekerja.length; g++) {
-//             System.out.println("pekerja ke " +g);
-//             pekerja[g]= SC.next();
-//         }
          List<String> nm = pegawai(jmlpekerja);
-         int x = 0;
-         int y = 0;
-         for (int k = 0, l= 0; k < rs.size(); k++, l++) {
-             if (k % jmlpekerja == 0) {
-                 l = 0;
-             }
-            x= x + rs.get(k);
-            
-//            }
-            if (rs.get(k) > 1)
-            {
-            System.out.println(nm.get(l) +" bekerja selama "+ rs.get(k) + 
-                    " hari" +"   dari hari ke " +y+ " samapai hari ke "+x );
-            y=x+1;
-            }else{
-                System.out.println(nm.get(l) +" bekerja selama "+ rs.get(k) + 
-                    " hari" +"   dari hari ke " +y);
-                y=x+1;
-            }
-         }  
+         print(nm, hr, jmlpekerja);
+
          
     }
 }

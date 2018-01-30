@@ -16,7 +16,7 @@ public class Validasi {
     static boolean validasiHari (int jmInteger) throws CustomException{
          if (jmInteger < 100){
              JOptionPane.showMessageDialog(null, "Bekerja minimal 100 Hari!!", "ERROR", JOptionPane.ERROR_MESSAGE);
-             throw new CustomException("Jumlah hari bekerja harus minimal 100 hari!");
+             throw new CustomException("Jumlah hari bekerja minimal 100 hari!");
          }
          return true;
      }
@@ -24,7 +24,7 @@ public class Validasi {
      static boolean validasiPekerja (int jmlpekerja) throws CustomException{
          if (jmlpekerja < 2 || jmlpekerja>10 ){
              JOptionPane.showMessageDialog(null, "Jumlah minimal pekerja adalah 2 orang!!", "ERROR", JOptionPane.ERROR_MESSAGE);
-             throw new CustomException("Jumlah Pekerja minimal 2 orang!");
+             throw new CustomException("Jumlah Pekerja minimal 2 orang dan maksimal 10 orang!");
          }
          return true;
      }

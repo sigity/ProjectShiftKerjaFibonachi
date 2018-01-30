@@ -57,11 +57,11 @@ public class HariTest {
      * Test of HitungHari method, of class Hari.
      */
     @org.junit.Test
-    public void testHitungHari() {
+    public void testHitungHari() throws CustomException {
         System.out.println("HitungHari");
         Hari instance = new Hari();
-        int hari =100;
-        assertEquals(11,instance.HitungHari(hari).size());
+        int hari =200;
+        assertEquals(12,instance.HitungHari(hari).size());
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }

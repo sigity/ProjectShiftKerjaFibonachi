@@ -32,6 +32,10 @@ public class ProjectFrame extends javax.swing.JFrame {
         (screenSize.height - frameSize.height) / 2);
     }
     
+    /**
+     * method untuk melakukan validasi terhadap inputan selain angka
+     * @param evt 
+     */
     public void FilterAngka(java.awt.event.KeyEvent evt){
         char vchar = evt.getKeyChar();
         if (!((Character.isDigit(vchar)
@@ -198,7 +202,11 @@ public class ProjectFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * method yang dijalankan ketika Button Schedule ditekan
+     * @param evt 
+     */
     private void BschduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BschduleActionPerformed
         if (Ipekerja.getText().equals("")||(Ihari.getText().equals("")))
         {
@@ -227,7 +235,11 @@ public class ProjectFrame extends javax.swing.JFrame {
     private void IpekerjaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IpekerjaKeyReleased
         
     }//GEN-LAST:event_IpekerjaKeyReleased
-
+    
+    /**
+     * method yang berjalan ketika menekan Enter pada JTextField Ipekerja
+     * @param evt 
+     */
     private void IpekerjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IpekerjaActionPerformed
         if (Ipekerja.getText().equals(""))
         {
@@ -248,6 +260,10 @@ public class ProjectFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_IpekerjaActionPerformed
     }
     
+    /**
+     * method yang berjalan ketika menekan Enter pada JTextField Ihari
+     * @param evt 
+     */
     private void IhariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IhariActionPerformed
         
         if (Ihari.getText().equals(""))
@@ -269,6 +285,10 @@ public class ProjectFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_IhariActionPerformed
     }
     
+    /**
+     * method untuk mengosongkan semua JTextField dan component lain pada JFrame
+     * @param evt 
+     */
     private void BresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BresetActionPerformed
         Ipekerja.setText("");
         Ihari.setText("");

@@ -35,13 +35,13 @@ public class Pekerja extends Hari{
              x = x + hr.get(k);
              if (hr.get(k) > 1) {
                    
-              v.add(nm.get(l) +" bekerja selama "+ hr.get(k) + 
-                    " hari" +"   dari hari ke " +y + " samapai hari ke "+x +"\n");
+              v.add(nm.get(l) +"\t bekerja selama\t"+hr.get(k)+ 
+                    " hari\t" +" dari hari ke " +y + "     sampai hari ke "+x +"\n");
                y=x+1;
              }else{
                    
-                 v.add(nm.get(l) +" bekerja selama "+ hr.get(k) + 
-                    " hari" +"   dari hari ke " +y +"\n");
+                 v.add(nm.get(l) +"\t bekerja selama\t"+hr.get(k)+ 
+                    " hari\t" +" dari hari ke " +y +"\n");
                 y=x+1;
              }
          }

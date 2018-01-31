@@ -5,9 +5,12 @@
  */
 package projectshiftkerjafibonachi;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +23,11 @@ public class ProjectFrame extends javax.swing.JFrame {
      */
     public ProjectFrame() {
         initComponents();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension frameSize = getSize();
+        setLocation(
+        (screenSize.width - frameSize.width) / 2,
+        (screenSize.height - frameSize.height) / 2);
     }
 
     /**
@@ -41,9 +49,12 @@ public class ProjectFrame extends javax.swing.JFrame {
         Bschdule = new javax.swing.JButton();
         Ipekerja = new javax.swing.JTextField();
         Ihari = new javax.swing.JTextField();
+        Breset = new javax.swing.JButton();
+        Bclose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("PENJADWALAN SHIFT FIBONACCI");
 
         jLabel2.setText("Jumlah Pekerja");
@@ -82,38 +93,59 @@ public class ProjectFrame extends javax.swing.JFrame {
             }
         });
 
+        Breset.setText("Reset");
+        Breset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BresetActionPerformed(evt);
+            }
+        });
+
+        Bclose.setText("Close");
+        Bclose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcloseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(85, 85, 85)
-                                        .addComponent(jLabel1))
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(Ihari, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel5))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(Ihari, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel5))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Ipekerja, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel4)))
-                                .addGap(29, 29, 29)))
-                        .addComponent(Bschdule)))
+                                .addComponent(Ipekerja, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)))
+                        .addGap(45, 45, 45)
+                        .addComponent(Bschdule)
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Breset)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Bclose)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(92, 92, 92))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,7 +153,7 @@ public class ProjectFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -132,9 +164,13 @@ public class ProjectFrame extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel5)
                             .addComponent(Ihari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(Bschdule, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bschdule, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Breset)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Bclose)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                 .addGap(18, 18, 18))
         );
 
@@ -142,6 +178,11 @@ public class ProjectFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BschduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BschduleActionPerformed
+        if (Ipekerja.getText().equals("")||(Ihari.getText().equals("")))
+        {
+            JOptionPane.showMessageDialog(null, "Jumlah Pekerja dan Jumlah hari TIDAK BOLEH Kosong!!");
+            Ipekerja.requestFocus();
+        }else{
         Integer vpekerja = Integer.valueOf(Ipekerja.getText());
         Integer vhari = Integer.valueOf(Ihari.getText());
         
@@ -155,26 +196,22 @@ public class ProjectFrame extends javax.swing.JFrame {
         }catch(NullPointerException ne){
             System.exit(0);
         } catch (CustomException ex) {
-//            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getMessage());
-        }
-        
-//        try {
-//            
-//        } catch (CustomException ex) {
-//            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-      
+        }    
         Otext.setText(p1.print(hp, hr, vpekerja));
-
-        
     }//GEN-LAST:event_BschduleActionPerformed
-
+    }
+    
     private void IpekerjaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IpekerjaKeyReleased
         
     }//GEN-LAST:event_IpekerjaKeyReleased
 
     private void IpekerjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IpekerjaActionPerformed
+        if (Ipekerja.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Jumlah Pekerja TIDAK BOLEH Kosong!!");
+            Ipekerja.requestFocus();
+        }else{
         Integer vpekerja = Integer.valueOf(Ipekerja.getText());
         try {
             if (Validasi.validasiPekerja(vpekerja)) {
@@ -185,28 +222,40 @@ public class ProjectFrame extends javax.swing.JFrame {
         } catch (CustomException ex) {
             Ipekerja.setText("");
             Ipekerja.requestFocus();
-//            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
-//            System.exit(0);
         }// TODO add your handling code here:
     }//GEN-LAST:event_IpekerjaActionPerformed
-
+    }
+    
     private void IhariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IhariActionPerformed
+        if (Ihari.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Jumlah hari TIDAK BOLEH Kosong!!");
+            Ihari.requestFocus();
+        }else{
         Integer vhari = Integer.valueOf(Ihari.getText());
         try {
             if (Validasi.validasiHari(vhari)) {
                 BschduleActionPerformed(evt);
-//                Ihari.requestFocus();
-                
             }
         }catch(NumberFormatException nfe){
             System.out.println("input harus int");
         } catch (CustomException ex) {
             Ihari.setText("");
             Ihari.requestFocus();
-//            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
-//            System.exit(0);
         }// TOD// TODO add your handling code here:
     }//GEN-LAST:event_IhariActionPerformed
+    }
+    
+    private void BresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BresetActionPerformed
+        Ipekerja.setText("");
+        Ihari.setText("");
+        Otext.setText("");
+        Ipekerja.requestFocus();        // TODO add your handling code here:
+    }//GEN-LAST:event_BresetActionPerformed
+
+    private void BcloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcloseActionPerformed
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_BcloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,6 +293,8 @@ public class ProjectFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bclose;
+    private javax.swing.JButton Breset;
     private javax.swing.JButton Bschdule;
     private javax.swing.JTextField Ihari;
     private javax.swing.JTextField Ipekerja;

@@ -12,7 +12,12 @@ import javax.swing.JOptionPane;
  * @author USER
  */
 public class Validasi {
-    
+    /**
+     * method untuk melakukan validasi jumlah hari
+     * @param jmInteger bernilai integer dan digunakan untuk menyimpan nilai jumlah hari
+     * @return memanggil nilai true
+     * @throws CustomException 
+     */
     static boolean validasiHari (int jmInteger) throws CustomException{
        if (jmInteger < 100){
              JOptionPane.showMessageDialog(null, "Bekerja minimal 100 Hari!!", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -21,6 +26,12 @@ public class Validasi {
          return true;
      }
      
+    /**
+     * method untuk melakukan validasi jumlah pekerja
+     * @param jmlpekerja bernilai integer dan digunakan untuk menyimpan nilai jumlah pekerja
+     * @return memanggil nilai true
+     * @throws CustomException 
+     */
      static boolean validasiPekerja (int jmlpekerja) throws CustomException{
          if (jmlpekerja < 2 ){
              JOptionPane.showMessageDialog(null, "Jumlah minimal pekerja adalah 2 orang!!", "ERROR", JOptionPane.ERROR_MESSAGE);

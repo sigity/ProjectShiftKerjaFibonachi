@@ -10,7 +10,10 @@ package projectshiftkerjafibonachi;
  * @author USER
  */
 public class CustomException extends Exception{
-    
+    /**
+     * method yang merupakan turunan dari kelas Exception
+     * @param pesan bernilai String dengan tipe akses super
+     */
     public CustomException(String pesan) {
          super(pesan);
          

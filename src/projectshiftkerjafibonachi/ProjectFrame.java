@@ -28,15 +28,16 @@ public class ProjectFrame extends javax.swing.JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Dimension frameSize = getSize();
         setLocation(
-        (screenSize.width - frameSize.width) / 2,
-        (screenSize.height - frameSize.height) / 2);
+                (screenSize.width - frameSize.width) / 2,
+                (screenSize.height - frameSize.height) / 2);
     }
-    
+
     /**
      * method untuk melakukan validasi terhadap inputan selain angka
-     * @param evt 
+     *
+     * @param evt
      */
-    public void FilterAngka(java.awt.event.KeyEvent evt){
+    public void FilterAngka(java.awt.event.KeyEvent evt) {
         char vchar = evt.getKeyChar();
         if (!((Character.isDigit(vchar)
                 || (vchar == KeyEvent.VK_BACKSPACE)
@@ -202,105 +203,108 @@ public class ProjectFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     /**
      * method yang dijalankan ketika Button Schedule ditekan
-     * @param evt 
+     *
+     * @param evt
      */
     private void BschduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BschduleActionPerformed
-        if (Ipekerja.getText().equals("")||(Ihari.getText().equals("")))
-        {
+        if (Ipekerja.getText().equals("") || (Ihari.getText().equals(""))) {
             JOptionPane.showMessageDialog(null, "Jumlah Pekerja dan Jumlah hari TIDAK BOLEH Kosong!!");
             Ipekerja.requestFocus();
-        }else{
-        Integer vpekerja = Integer.valueOf(Ipekerja.getText());
-        Integer vhari = Integer.valueOf(Ihari.getText());
-        
-        Pekerja p1=new Pekerja();
-        Hari h2=new Pekerja();
-        List hp = null;
-        List hr = null;
-        try {
-            hp = p1.HitungPekerja(vpekerja);
-            hr = h2.HitungHari(vhari);
-        }catch(NullPointerException ne){
-            System.exit(0);
-        } catch (CustomException ex) {
-            System.out.println(ex.getMessage());
-        }    
-        p1.print(hp, hr, vpekerja, jTable1);
+        } else {
+            Integer vpekerja = Integer.valueOf(Ipekerja.getText());
+            Integer vhari = Integer.valueOf(Ihari.getText());
+
+            Pekerja p1 = new Pekerja();
+            Hari h2 = new Pekerja();
+            List hp = null;
+            List hr = null;
+            try {
+                hp = p1.HitungPekerja(vpekerja);
+                hr = h2.HitungHari(vhari);
+            } catch (NullPointerException ne) {
+                System.exit(0);
+            } catch (CustomException ex) {
+                System.out.println(ex.getMessage());
+            }
+            p1.print(hp, hr, vpekerja, jTable1);
     }//GEN-LAST:event_BschduleActionPerformed
     }
-    
+
     private void IpekerjaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IpekerjaKeyReleased
-        
+
     }//GEN-LAST:event_IpekerjaKeyReleased
-    
+
     /**
      * method yang berjalan ketika menekan Enter pada JTextField Ipekerja
-     * @param evt 
+     *
+     * @param evt
      */
     private void IpekerjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IpekerjaActionPerformed
-        if (Ipekerja.getText().equals(""))
-        {
+        if (Ipekerja.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Jumlah Pekerja TIDAK BOLEH Kosong!!");
             Ipekerja.requestFocus();
-        }else{
-        Integer vpekerja = Integer.valueOf(Ipekerja.getText());
-        try {
-            if (Validasi.validasiPekerja(vpekerja)) {
-                Ihari.requestFocus();
-            }
-        }catch(NumberFormatException nfe){
-            System.out.println("input harus int");
-        } catch (CustomException ex) {
-            Ipekerja.setText("");
-            Ipekerja.requestFocus();
-        }// TODO add your handling code here:
+        } else {
+            Integer vpekerja = Integer.valueOf(Ipekerja.getText());
+            try {
+                if (Validasi.validasiPekerja(vpekerja)) {
+                    Ihari.requestFocus();
+                }
+            } catch (NumberFormatException nfe) {
+                System.out.println("input harus int");
+            } catch (CustomException ex) {
+                Ipekerja.setText("");
+                Ipekerja.requestFocus();
+            }// TODO add your handling code here:
+        }
     }//GEN-LAST:event_IpekerjaActionPerformed
-    }
     
+
     /**
      * method yang berjalan ketika menekan Enter pada JTextField Ihari
-     * @param evt 
+     *
+     * @param evt
      */
     private void IhariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IhariActionPerformed
-        
-        if (Ihari.getText().equals(""))
-        {
+
+        if (Ihari.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Jumlah hari TIDAK BOLEH Kosong!!");
             Ihari.requestFocus();
-        }else{
-        Integer vhari = Integer.valueOf(Ihari.getText());
-        try {
-            if (Validasi.validasiHari(vhari)) {
-                BschduleActionPerformed(evt);
-            }
-        }catch(NumberFormatException nfe){
-            System.out.println("input harus int");
-        } catch (CustomException ex) {
-            Ihari.setText("");
-            Ihari.requestFocus();
-        }// TOD// TODO add your handling code here:
+        } else {
+            Integer vhari = Integer.valueOf(Ihari.getText());
+            try {
+                if (Validasi.validasiHari(vhari)) {
+                    BschduleActionPerformed(evt);
+                }
+            } catch (NumberFormatException nfe) {
+                System.out.println("input harus int");
+            } catch (CustomException ex) {
+                Ihari.setText("");
+                Ihari.requestFocus();
+            }// TOD// TODO add your handling code here:
+        }
     }//GEN-LAST:event_IhariActionPerformed
-    }
     
+
     /**
      * method untuk mengosongkan semua JTextField dan component lain pada JFrame
-     * @param evt 
+     *
+     * @param evt
      */
     private void BresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BresetActionPerformed
         Ipekerja.setText("");
         Ihari.setText("");
 //        Otext.setText("");
-        DefaultTableModel oModel = (DefaultTableModel)jTable1.getModel();
-        while (oModel.getRowCount()> 0) {            
-            for (int i = 0; i < oModel.getRowCount() ; i++) {
+        DefaultTableModel oModel = (DefaultTableModel) jTable1.getModel();
+        while (oModel.getRowCount() > 0) {
+            for (int i = 0; i < oModel.getRowCount(); i++) {
                 oModel.removeRow(i);
             }
         }
         Ipekerja.requestFocus();        // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_BresetActionPerformed
 
     private void IpekerjaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IpekerjaKeyTyped

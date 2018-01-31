@@ -36,12 +36,12 @@ public class Pekerja extends Hari{
              }
              x = x + hr.get(k);
              if (hr.get(k) > 1) {
-               v.add(new Object[] {nm.get(l),hr.get(k)+ "Hari", "Dari Hari Ke " +y + " Sampai Hari Ke " +x});
+               v.add(new Object[] {nm.get(l),hr.get(k)+ " Hari", "Dari Hari Ke " +y + "    Sampai Hari Ke " +x});
 //              v.add(nm.get(l) +"\t bekerja selama\t"+hr.get(k)+ 
 //                    " hari\t" +" dari hari ke " +y + "     sampai hari ke "+x +"\n");
                y=x+1;
              }else{
-                v.add(new Object[] {nm.get(l),hr.get(k), "Dari Kari Ke " +y});   
+                v.add(new Object[] {nm.get(l),hr.get(k)+" Hari", "Dari Kari Ke " +y});   
 //                 v.add(nm.get(l) +"\t bekerja selama\t"+hr.get(k)+ 
 //                    " hari\t" +" dari hari ke " +y +"\n");
                 y=x+1;

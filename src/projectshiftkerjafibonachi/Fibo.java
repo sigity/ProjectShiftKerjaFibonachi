@@ -43,7 +43,7 @@ public class Fibo {
                 }
              i++;
          }
-//         System.out.println(onjlist);
+         System.out.println(onjlist);
          return onjlist;
      }
      
@@ -76,7 +76,12 @@ public class Fibo {
              }
          }
      }
-     
+     /**
+      * 
+      * @param jmInteger
+      * @return 
+      * @throws CustomException 
+      */
      static boolean validasiHari (int jmInteger) throws CustomException{
          if (jmInteger < 100){
              JOptionPane.showMessageDialog(null, "Bekerja minimal 100 Hari!!", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -106,5 +111,7 @@ public class Fibo {
          System.out.println("========================================================================");
          List<String> nm = pegawai(jmlpekerja);
          print(nm, hr, jmlpekerja);
+         Hari h=new Hari();
+         System.out.println(h.HitungHari(200).get(3));
     }
 }

@@ -70,6 +70,17 @@ public class ProjectFrame extends javax.swing.JFrame {
                 IpekerjaActionPerformed(evt);
             }
         });
+        Ipekerja.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                IpekerjaKeyReleased(evt);
+            }
+        });
+
+        Ihari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IhariActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,25 +148,65 @@ public class ProjectFrame extends javax.swing.JFrame {
         Pekerja p1=new Pekerja();
         Hari h2=new Pekerja();
         List hp = null;
-        try {
-            hp = p1.HitungPekerja(vpekerja);
-        } catch (CustomException ex) {
-            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
         List hr = null;
         try {
+            hp = p1.HitungPekerja(vpekerja);
             hr = h2.HitungHari(vhari);
+        }catch(NullPointerException ne){
+            System.exit(0);
         } catch (CustomException ex) {
-            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
+        
+//        try {
+//            
+//        } catch (CustomException ex) {
+//            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
+//        }
       
         Otext.setText(p1.print(hp, hr, vpekerja));
 
+        
     }//GEN-LAST:event_BschduleActionPerformed
 
+    private void IpekerjaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IpekerjaKeyReleased
+        
+    }//GEN-LAST:event_IpekerjaKeyReleased
+
     private void IpekerjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IpekerjaActionPerformed
-        // TODO add your handling code here:
+        Integer vpekerja = Integer.valueOf(Ipekerja.getText());
+        try {
+            if (Validasi.validasiPekerja(vpekerja)) {
+                Ihari.requestFocus();
+            }
+        }catch(NumberFormatException nfe){
+            System.out.println("input harus int");
+        } catch (CustomException ex) {
+            Ipekerja.setText("");
+            Ipekerja.requestFocus();
+//            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
+//            System.exit(0);
+        }// TODO add your handling code here:
     }//GEN-LAST:event_IpekerjaActionPerformed
+
+    private void IhariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IhariActionPerformed
+        Integer vhari = Integer.valueOf(Ihari.getText());
+        try {
+            if (Validasi.validasiHari(vhari)) {
+                BschduleActionPerformed(evt);
+//                Ihari.requestFocus();
+                
+            }
+        }catch(NumberFormatException nfe){
+            System.out.println("input harus int");
+        } catch (CustomException ex) {
+            Ihari.setText("");
+            Ihari.requestFocus();
+//            Logger.getLogger(ProjectFrame.class.getName()).log(Level.SEVERE, null, ex);
+//            System.exit(0);
+        }// TOD// TODO add your handling code here:
+    }//GEN-LAST:event_IhariActionPerformed
 
     /**
      * @param args the command line arguments

@@ -145,9 +145,13 @@
     <Component class="javax.swing.JTextField" name="Ipekerja">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IpekerjaActionPerformed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="IpekerjaKeyReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Ihari">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IhariActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

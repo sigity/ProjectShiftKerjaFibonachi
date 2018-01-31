@@ -25,7 +25,7 @@ public class Hari {
     
     public List HitungHari(int hari) throws CustomException{
         Validasi.validasiHari(hari);
-        List listhari = new ArrayList();
+        List<Integer> listhari = new ArrayList();
         while (sum < hari) {            
             sum= sum + MFibonacci(i);
             listhari.add(MFibonacci(i));
